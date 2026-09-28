@@ -33,9 +33,9 @@ The plugin adds the server, a skill that tells Claude when to use each tool, and
 
 | Command | Writes back, for each row |
 | --- | --- |
-| `/hunch-check <file.csv> <column> <yes/no question>` | The probability of yes |
-| `/hunch-tag <file.csv> <column> <label1,label2,...> [question]` | One of your labels, with its confidence |
-| `/hunch-score <file.csv> <column> <question> <level1,...,levelN>` | A level from your scale, with its confidence |
+| `/hunch:hunch-check <file.csv> <column> <yes/no question>` | The probability of yes |
+| `/hunch:hunch-tag <file.csv> <column> <label1,label2,...> [question]` | One of your labels, with its confidence |
+| `/hunch:hunch-score <file.csv> <column> <question> <level1,...,levelN>` | A level from your scale, with its confidence |
 
 For scripts or CI where no browser is available, add the server with the key in a header instead of installing the plugin:
 

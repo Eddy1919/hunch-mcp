@@ -14,7 +14,7 @@ Hunch does not read spreadsheets or files itself. Read the texts with whatever t
 | `hunch_multi` | Several yes/no facts about the same text in one call (up to 10 questions) | 1 credit per question per answered text |
 | `hunch_balance` | Checking credits left before a big batch | Free |
 
-Blank texts and texts repeated elsewhere in the same call are free. Answers are cached for six hours, so asking the same text and question again inside that window costs nothing.
+Blank texts and texts repeated elsewhere in the same call are free. The same text asked again in a later call is charged again, so keep the results instead of asking twice.
 
 ## Picking a tool
 
@@ -40,13 +40,13 @@ Other limits: the model judges text only, no math, counting, or dates. English w
 
 - Call `hunch_balance` first for any batch in the hundreds of rows, and stop to say if credits look short rather than burning through them.
 - `hunch_multi` is cheaper than separate calls whenever more than one yes/no fact is needed from the same text: one call, one credit per question per text, instead of one full pass per question.
-- Deduplicate before you're surprised: identical texts in the same call are already free, but texts that only differ in whitespace or casing are not deduplicated by Hunch, so trim them yourself if the source data is messy.
+- Deduplicate before you're surprised: identical texts in the same call are already free, but texts that differ in casing or inner whitespace are not deduplicated by Hunch (it only trims leading and trailing spaces), so normalize them yourself if the source data is messy.
 - A tool result reports how many texts were actually answered versus skipped, and why (usually out of credits). Read that before assuming every row got a value.
 
 ## Reading a CSV or spreadsheet export and writing results back
 
 1. Read the source (the CSV file, or the relevant column from a spreadsheet MCP server's read tool) into an ordered list of texts, keeping blanks as empty strings rather than dropping rows. Row order is how results get matched back up.
-2. Call the right Hunch tool once with that list. Not once per row: one call over the whole batch is what makes the six-hour cache and the free-duplicate rule useful, and it is far fewer round trips.
+2. Call the right Hunch tool with the whole list, up to 500 texts per call, not once per row. Duplicates inside one call are free, and it is far fewer round trips.
 3. Match each result back to its row **by position**, not by re-matching the text, since duplicate texts in the input collapse to one answer internally but the tool still returns one result per input row in order.
 4. Write the new column (or columns, for `hunch_multi`) back with the same tool that read the source, then report what was skipped and why, if anything was.
 
