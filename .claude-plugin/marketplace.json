@@ -10,9 +10,9 @@
     {
       "name": "hunch",
       "source": "./hunch",
-      "description": "Connects the Hunch remote MCP server (https://hunchsheet.app/mcp) and adds a skill for judging, tagging and scoring text.",
+      "description": "Connects the Hunch remote MCP server (https://hunchsheet.app/mcp, sign in with your Hunch key) and adds a skill plus /hunch-check, /hunch-tag and /hunch-score for CSV columns.",
       "displayName": "Hunch",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }

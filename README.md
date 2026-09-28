@@ -27,13 +27,17 @@ The form at [hunchsheet.app](https://hunchsheet.app/#trial) emails a key with 10
 /plugin install hunch@hunch-mcp
 ```
 
-Set your key before starting Claude Code:
+Then run `/mcp`, pick `hunch` and choose **Authenticate**. A hunchsheet.app page opens in your browser: paste your key and click **Connect**. The key never goes into a file, and Claude Code renews the sign-in on its own.
 
-```bash
-export HUNCH_API_KEY=hunch_your_key_here
-```
+The plugin adds the server, a skill that tells Claude when to use each tool, and three commands for CSV files:
 
-The plugin adds the server and a skill that tells Claude when to use each tool. Without the plugin:
+| Command | Writes back, for each row |
+| --- | --- |
+| `/hunch-check <file.csv> <column> <yes/no question>` | The probability of yes |
+| `/hunch-tag <file.csv> <column> <label1,label2,...> [question]` | One of your labels, with its confidence |
+| `/hunch-score <file.csv> <column> <question> <level1,...,levelN>` | A level from your scale, with its confidence |
+
+For scripts or CI where no browser is available, add the server with the key in a header instead of installing the plugin:
 
 ```bash
 claude mcp add --transport http hunch https://hunchsheet.app/mcp --header "Authorization: Bearer hunch_your_key_here"

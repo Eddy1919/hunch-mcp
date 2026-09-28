@@ -7,7 +7,7 @@ Parse `$ARGUMENTS` as four parts: a CSV file path, a column name (or 1-based ind
 
 1. Read the CSV file and pull out the named column as an ordered list of texts, keeping blank cells as empty strings so row order is preserved.
 2. Call `hunch_balance` and mention the credits available before scoring a large file.
-3. Call `hunch_score` once with that full list of texts, the question, and the levels split from the comma-separated argument.
+3. Call `hunch_score` with the texts, the question, and the levels split from the comma-separated argument. A call takes at most 500 texts, so for a longer column call it once per block of 500, in row order.
 4. Match each result back to its row by position (not by re-matching text), and write two new columns back into the CSV next to the original: `<column>_label` (the level label) and `<column>_confidence`.
 5. Save the updated CSV (in place unless the user asked for a different output path) and report how many rows were scored, how many were skipped and why, and the credits left.
 

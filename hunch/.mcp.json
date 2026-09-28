@@ -2,10 +2,7 @@
   "mcpServers": {
     "hunch": {
       "type": "http",
-      "url": "https://hunchsheet.app/mcp",
-      "headers": {
-        "Authorization": "Bearer ${HUNCH_API_KEY}"
-      }
+      "url": "https://hunchsheet.app/mcp"
     }
   }
 }
