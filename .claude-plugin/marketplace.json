@@ -1,0 +1,18 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "hunch-mcp",
+  "description": "Hunch: calibrated judgments for text over MCP (hunch_ask, hunch_pick, hunch_score, hunch_multi, hunch_balance).",
+  "owner": {
+    "name": "Hunch",
+    "url": "https://hunchsheet.app"
+  },
+  "plugins": [
+    {
+      "name": "hunch",
+      "source": "./hunch",
+      "description": "Connects the Hunch remote MCP server (https://hunchsheet.app/mcp) and adds a skill for judging, tagging and scoring text.",
+      "displayName": "Hunch",
+      "version": "1.0.0"
+    }
+  ]
+}

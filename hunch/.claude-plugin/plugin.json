@@ -1,0 +1,16 @@
+{
+  "$schema": "https://code.claude.com/schemas/plugin.json",
+  "name": "hunch",
+  "displayName": "Hunch",
+  "version": "1.0.0",
+  "description": "Adds the Hunch remote MCP server (calibrated judgments for text: a probability, a pick, a score, or several yes/no answers at once) and a skill that teaches when and how to use it.",
+  "author": {
+    "name": "Hunch",
+    "url": "https://hunchsheet.app"
+  },
+  "homepage": "https://hunchsheet.app/connectors",
+  "license": "MIT",
+  "keywords": ["mcp", "hunch", "classification", "scoring", "spreadsheets", "csv"],
+  "mcpServers": "./.mcp.json",
+  "defaultEnabled": true
+}

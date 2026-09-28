@@ -1,0 +1,23 @@
+{
+  "name": "hunch",
+  "version": "1.0.0",
+  "description": "Calibrated judgments for text: a probability, a pick from your options, a score, or several yes/no answers at once.",
+  "mcpServers": {
+    "hunch": {
+      "httpUrl": "https://hunchsheet.app/mcp",
+      "headers": {
+        "Authorization": "Bearer $HUNCH_API_KEY"
+      },
+      "timeout": 30000
+    }
+  },
+  "contextFileName": "GEMINI.md",
+  "settings": [
+    {
+      "name": "Hunch API Key",
+      "description": "Starts with hunch_, 40 hex characters after that. Get a free key (100 rows) at https://hunchsheet.app.",
+      "envVar": "HUNCH_API_KEY",
+      "sensitive": true
+    }
+  ]
+}
