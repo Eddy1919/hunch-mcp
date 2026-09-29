@@ -1,6 +1,6 @@
 {
   "name": "hunch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Calibrated judgments for text: a probability, a pick from your options, a score, or several yes/no answers at once.",
   "mcpServers": {
     "hunch": {

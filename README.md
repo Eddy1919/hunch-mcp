@@ -4,6 +4,14 @@ Hunch gives your AI assistant calibrated judgments about text. For each text you
 
 The server is hosted at `https://hunchsheet.app/mcp` (Streamable HTTP). This repo holds the install files for Claude Code and Gemini CLI. Setup for Claude, ChatGPT, Cursor and VS Code is at [hunchsheet.app/connectors](https://hunchsheet.app/connectors).
 
+## Any agent, one line
+
+```bash
+npx add-mcp https://hunchsheet.app/mcp -y
+```
+
+That adds the server to every agent it finds on your machine (Claude Code, Cursor, VS Code, Codex, Gemini CLI and more). Sign in when the agent asks, or press **Start with 100 free rows** on the sign-in page: no email, no card. To try Hunch with no account at all, use `https://hunchsheet.app/mcp/try` instead: ten texts a day are free. Install lines for each client: [hunchsheet.app/install](https://hunchsheet.app/install). How agents use it: [hunchsheet.app/agents](https://hunchsheet.app/agents).
+
 ## Tools
 
 | Tool | Returns |
@@ -13,12 +21,15 @@ The server is hosted at `https://hunchsheet.app/mcp` (Streamable HTTP). This rep
 | `hunch_score` | A position on your levels (0 to n-1), the most likely level, and its confidence |
 | `hunch_multi` | One probability per question for each text, up to 10 questions |
 | `hunch_balance` | Credits left on your key |
+| `hunch_quote` | Credits and dollars a job needs, before you run it. Free, no key needed |
+| `hunch_buy_credits` | A checkout link for the person to open. The assistant cannot pay for them |
+| `hunch_get_key` | Keyless `/mcp/try` connection only: a key with 100 free rows, no email |
 
 Good for leads, support tickets, reviews, survey answers, emails and any list of short texts you want judged the same way. It judges text only: no arithmetic, counting or dates. English works best. Put the definition inside the question, for example "Can this person approve a software purchase without asking someone else?" instead of "Is this a decision maker?".
 
 ## Get a key
 
-The form at [hunchsheet.app](https://hunchsheet.app/#trial) emails a key with 100 free rows. After that, 5,000 rows cost $29 and credits never expire. One credit per answered text per question. Blank texts and repeats in the same call are free.
+The form at [hunchsheet.app](https://hunchsheet.app/#trial) emails a key with 100 free rows. No inbox? The sign-in page has a free-rows button, and an agent can call `hunch_get_key` on `/mcp/try`. After that, 5,000 rows cost $29 and credits never expire. One credit per answered text per question. Blank texts and repeats in the same call are free.
 
 ## Claude Code
 

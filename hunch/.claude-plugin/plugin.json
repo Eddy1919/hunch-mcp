@@ -2,7 +2,7 @@
   "$schema": "https://code.claude.com/schemas/plugin.json",
   "name": "hunch",
   "displayName": "Hunch",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Judge, tag and score many short texts with Hunch: a probability, a pick from your labels, or a score for every row of a CSV column.",
   "author": {
     "name": "Hunch",

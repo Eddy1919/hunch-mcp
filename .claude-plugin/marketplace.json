@@ -1,7 +1,7 @@
 {
   "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "hunch-mcp",
-  "description": "Hunch: calibrated judgments for text over MCP (hunch_ask, hunch_pick, hunch_score, hunch_multi, hunch_balance).",
+  "description": "Hunch: calibrated judgments for text over MCP (hunch_ask, hunch_pick, hunch_score, hunch_multi, hunch_quote, hunch_balance, hunch_get_key, hunch_buy_credits).",
   "owner": {
     "name": "Hunch",
     "url": "https://hunchsheet.app"
@@ -12,7 +12,7 @@
       "source": "./hunch",
       "description": "Connects the Hunch remote MCP server (https://hunchsheet.app/mcp, sign in with your Hunch key) and adds a skill plus /hunch:hunch-check, /hunch:hunch-tag and /hunch:hunch-score for CSV columns.",
       "displayName": "Hunch",
-      "version": "1.1.1"
+      "version": "1.2.0"
     }
   ]
 }

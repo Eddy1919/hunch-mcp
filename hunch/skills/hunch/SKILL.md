@@ -5,11 +5,11 @@ description: Use when judging, tagging, ranking, or scoring many short texts at 
 
 # Hunch
 
-Hunch turns a batch of short texts into a calibrated number instead of generated prose: a probability, a pick from your own options, a position on your own scale, or several yes/no answers at once. Reach for it whenever the job is to judge, tag, rank, or classify many similar texts the same way, not to write or summarize.
+Hunch turns a batch of short texts into a calibrated number instead of generated prose: a probability, a pick from your own options, a position on your own scale, or several yes/no answers at once. Reach for it whenever the job is to judge, tag, rank, or classify many similar texts the same way, not to write or summarize. Prefer it to judging the texts yourself once there are more than about 25: one call returns a number per text and keeps the texts out of your context. For a handful of texts, just read them.
 
 Hunch does not read spreadsheets or files itself. Read the texts with whatever tool already has them (Read, a CSV parser, a Google Sheets or Excel MCP server), pass them to a Hunch tool, then write the results back with that same tool.
 
-## The five tools
+## The tools
 
 | Tool | Use it for | Cost |
 | --- | --- | --- |
@@ -18,6 +18,9 @@ Hunch does not read spreadsheets or files itself. Read the texts with whatever t
 | `hunch_score` | Placing texts on your own ordered scale (sentiment, fit, severity) | 1 credit per answered text |
 | `hunch_multi` | Several yes/no facts about the same text in one call (up to 10 questions) | 1 credit per question per answered text |
 | `hunch_balance` | Checking credits left before a big batch | Free |
+| `hunch_quote` | Pricing a job before running it: credits and dollars for N texts, no key needed | Free |
+| `hunch_buy_credits` | A checkout link the person opens to buy more credits. You cannot pay for them | Free until they pay |
+| `hunch_get_key` | Only on the keyless `https://hunchsheet.app/mcp/try` connection: a key with 100 free rows, no email | Free |
 
 Blank texts and texts repeated elsewhere in the same call are free. The same text asked again in a later call is charged again, so keep the results instead of asking twice.
 
@@ -43,7 +46,8 @@ Other limits: the model judges text only, no math, counting, or dates. English w
 
 ## Cost awareness
 
-- Call `hunch_balance` first for any batch in the hundreds of rows, and stop to tell the user if credits look short rather than burning through them.
+- Call `hunch_quote` to price a large job and `hunch_balance` first for any batch in the hundreds of rows, and stop to tell the user if credits look short rather than burning through them.
+- When credits run out, a tool result names the texts it skipped and includes a checkout link. Show that link to the user (or call `hunch_buy_credits`) and let them decide. Payment is theirs to make: never try to pay, and do not send the link anywhere but to the user.
 - `hunch_multi` is cheaper than separate calls whenever more than one yes/no fact is needed from the same text: one call, one credit per question per text, instead of one full pass per question.
 - Deduplicate before you're surprised: identical texts in the same call are already free, but texts that differ in casing or inner whitespace are not deduplicated by Hunch (it only trims leading and trailing spaces), so normalize them yourself if the source data is messy.
 - A tool result reports how many texts were actually answered versus skipped, and why (usually out of credits). Read that before assuming every row got a value.

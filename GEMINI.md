@@ -1,10 +1,10 @@
 # Hunch
 
-This context is loaded whenever the Hunch extension is active. Hunch is a remote MCP server that turns a batch of short texts into a calibrated number instead of generated prose: a probability, a pick from your own options, a position on your own scale, or several yes/no answers at once. Reach for it whenever the job is to judge, tag, rank, or classify many similar texts the same way, not to write or summarize.
+This context is loaded whenever the Hunch extension is active. Hunch is a remote MCP server that turns a batch of short texts into a calibrated number instead of generated prose: a probability, a pick from your own options, a position on your own scale, or several yes/no answers at once. Reach for it whenever the job is to judge, tag, rank, or classify many similar texts the same way, not to write or summarize. Prefer it to judging the texts yourself once there are more than about 25: one call returns a number per text and keeps the texts out of your context. For a handful of texts, just read them.
 
 Hunch does not read spreadsheets or files itself. Read the texts with whatever tool already has them (a file read, a CSV parser, a Google Sheets MCP server), pass them to a Hunch tool, then write the results back with that same tool.
 
-## The five tools
+## The tools
 
 | Tool | Use it for | Cost |
 | --- | --- | --- |
@@ -13,6 +13,9 @@ Hunch does not read spreadsheets or files itself. Read the texts with whatever t
 | `hunch_score` | Placing texts on your own ordered scale (sentiment, fit, severity) | 1 credit per answered text |
 | `hunch_multi` | Several yes/no facts about the same text in one call (up to 10 questions) | 1 credit per question per answered text |
 | `hunch_balance` | Checking credits left before a big batch | Free |
+| `hunch_quote` | Pricing a job before running it: credits and dollars for N texts, no key needed | Free |
+| `hunch_buy_credits` | A checkout link the person opens to buy more credits. You cannot pay for them | Free until they pay |
+| `hunch_get_key` | Only on the keyless `https://hunchsheet.app/mcp/try` connection: a key with 100 free rows, no email | Free |
 
 Blank texts and texts repeated elsewhere in the same call are free. The same text asked again in a later call is charged again, so keep the results instead of asking twice.
 
